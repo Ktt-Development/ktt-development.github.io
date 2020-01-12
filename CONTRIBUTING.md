@@ -35,6 +35,7 @@ public abstract class
 public static final class
 ```
 - Always use `final` keyword when possible.
+- Use `abstract` classes for classes with static members only.
 
 #### Variables
 - Use `camelCase` for variable names.
