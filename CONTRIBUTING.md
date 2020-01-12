@@ -87,7 +87,7 @@ public static final void method();
 ```
 - Methods inside constructors should not use `this` unless necessary.
 ```java
-private final String string;
+private String string;
 
 public method(final String string){
     this.string = string; // OK
@@ -207,14 +207,14 @@ switch(string){
 ```
 - Use for each loops unless index is necessary.
 ```java
-String[] arr = new String[100];
+final String[] arr = new String[100];
 // Bad
 for(int index = 0; index < arr.length; index++){
     System.out.println(arr[index]);
 }
 
 // Good
-for(String iterator : arr){
+for(final String iterator : arr){
     System.out.println(iterator);
 }
 ```
