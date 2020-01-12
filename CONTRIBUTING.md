@@ -8,7 +8,7 @@ Files, methods, variables, and comments* must be written in English.
 *\*comments may be written in any language but must have an English translation as well*
 
 #### Use an IDE.
-It is recommended to use [IntelliJ IDEA](https://www.jetbrains.com/idea/download/).
+It is recommended to use [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) or [PyCharm](https://www.jetbrains.com/pycharm/download/#section=windows).
 
 #### Make sure compile is stable.
 Do not submit a pull request without testing if the code compiles.
