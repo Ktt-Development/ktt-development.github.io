@@ -33,6 +33,7 @@ Large changes are unlikely to be reviewed in a timely matter, pull requests be f
 ```java 
 public abstract class
 public static final class
+public static abstract class
 ```
 - Always use `final` keyword when possible.
 - Use `abstract` classes for classes with static members only.
