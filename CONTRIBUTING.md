@@ -140,6 +140,10 @@ private final String
     textOne,
     textTwo
 ;
+
+private final String textOne = "text";
+private final int    two     = 2;
+private final String extremely_long_variable = "too long for columns to make sense";
 ```
 - Use simplified expressions.
 ```java
