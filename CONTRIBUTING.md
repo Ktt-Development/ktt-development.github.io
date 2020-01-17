@@ -16,6 +16,9 @@ Do not submit a pull request without testing if the code compiles.
 #### Do not make large changes.
 Large changes are unlikely to be reviewed in a timely matter, pull requests be focused on one issue or feature.
 
+#### Associate pushes and pull requests.
+Associate with issue numbers.
+
 ## Style Guidelines (Java)
 
 - Use features only in JDK 11.
