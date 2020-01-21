@@ -109,15 +109,19 @@ public method(final String string){
 - Use lambdas where possible.
 
 #### Syntax
-- Organize sections of code by function.
+- Organize sections of code using regions
 ```java
 public void method(){
-    /* set text */ {
+    // region set text
+    {
         setText("Text");
     }
-    /* read text */ {
+    // endregion
+    // region read text
+    {
         System.out.println(getText());
     }
+    // endregion
 }
 // Don't use for operations this simple, but you get the idea.
 ```
