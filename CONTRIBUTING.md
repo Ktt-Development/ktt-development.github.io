@@ -109,7 +109,7 @@ public method(final String string){
 - Use lambdas where possible.
 
 #### Syntax
-- Organize sections of code using regions
+- Organize sections of code using regions.
 ```java
 public void method(){
     // region set text
@@ -232,4 +232,4 @@ for(final String iterator : arr){
 }
 ```
 #### Files
-- Use only lower case file extensions
+- Use only lower case file extensions.
