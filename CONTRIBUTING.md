@@ -16,6 +16,9 @@ Do not submit a pull request without testing if the code compiles.
 #### Do not make large changes.
 Large changes are unlikely to be reviewed in a timely matter, pull requests be focused on one issue or feature.
 
+#### Associate pushes and pull requests.
+Associate with issue numbers.
+
 ## Style Guidelines (Java)
 
 - Use features only in JDK 11.
@@ -106,15 +109,19 @@ public method(final String string){
 - Use lambdas where possible.
 
 #### Syntax
-- Organize sections of code by function.
+- Organize sections of code using regions.
 ```java
 public void method(){
-    /* set text */ {
+    // region set text
+    {
         setText("Text");
     }
-    /* read text */ {
+    // endregion
+    // region read text
+    {
         System.out.println(getText());
     }
+    // endregion
 }
 // Don't use for operations this simple, but you get the idea.
 ```
@@ -225,4 +232,4 @@ for(final String iterator : arr){
 }
 ```
 #### Files
-- Use only lower case file extensions
+- Use only lower case file extensions.
