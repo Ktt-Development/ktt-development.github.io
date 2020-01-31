@@ -1,0 +1,24 @@
+{
+    "app" : {
+        "mediaworks" : {
+            "git" : "https://github.com/Ktt-Development/ktt.app.mediaworks/",
+            "version" : {
+                "01.00.00" : null
+            }
+        }
+    },
+    "lib" : {
+        "httpserver" : {
+            "git" : "https://github.com/Ktt-Development/ktt.lib.httpserver/",
+            "version" : {
+                "01.00.01" : null,
+                "01.01.00" : null,
+                "01.01.01" : null
+            }
+        }
+    },
+    "git" : {
+        "curl" : "https://github.com/Ktt-Development/",
+        "uurl" : "https://github.com/Katsute/"
+    }
+}
