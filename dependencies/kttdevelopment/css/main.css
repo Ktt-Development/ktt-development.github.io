@@ -1,0 +1,35 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    padding-top: 56px;
+    background-color: #F3F2F1;
+}
+
+nav.bg-dark {
+    background-color: #202020 !important;
+}
+
+footer {
+    background-color: #404040;
+}
+
+a.no-text-decoration, a:hover.no-text-decoration{
+    text-decoration: none;
+}
+
+p.card-text {
+    max-height:100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Footer */
+
+footer {
+  width: 100%;
+  background-color: #202020 !important;
+}
