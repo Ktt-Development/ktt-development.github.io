@@ -7,6 +7,6 @@ function firstLoad(){
 }
 
 function confirmFirstLoad(){
-    setCookie("learnedNavigation",true,1);
+    setCookie("learnedNavigation",true,1/24);
     firstLoad();
 }
