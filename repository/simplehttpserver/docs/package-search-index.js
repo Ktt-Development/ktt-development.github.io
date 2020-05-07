@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.kttdevelopment.simplehttpserver"},{"l":"com.kttdevelopment.simplehttpserver.handler"},{"l":"com.kttdevelopment.simplehttpserver.var"}]
