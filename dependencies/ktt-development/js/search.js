@@ -49,7 +49,7 @@ function __searchInit(){
                     rtag.categories[i] = rtag.categories[i].toLowerCase();
 
                 if(
-                    (search     === "" || v.name.toLowerCase().startsWith(search.toLowerCase())) &&
+                    (search     === "" || v.name.toLowerCase().includes(search.toLowerCase())) &&
                     (type       === "" || rtag.type         === type) &&
                     (support    === "" || (rtag.isSupported && support === "supported") || (!rtag.isSupported && support === "unsupported")) &&
                     (category   === "" || rtag.categories.includes(category)) &&
@@ -66,7 +66,7 @@ function __searchInit(){
                     rtag.categories[i] = rtag.categories[i].toLowerCase();
 
                 if(
-                    (search     === "" || v.name.toLowerCase().has(search.toLowerCase())) &&
+                    (search     === "" || v.name.toLowerCase().includes(search.toLowerCase())) &&
                     (type       === "" || rtag.type         === type) &&
                     (support    === "" || (rtag.isSupported && support === "supported") || (!rtag.isSupported && support === "unsupported")) &&
                     (category   === "" || rtag.categories.includes(category)) &&
