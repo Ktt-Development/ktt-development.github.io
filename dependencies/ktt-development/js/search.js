@@ -37,7 +37,7 @@ function __searchInit(){
         "/dependencies/ktt-development/data/repository.json",
         function(data){
             var repos   = data.repository;
-            var proj    = data.project;
+            var snip    = data.snippet;
 
             var match = [];
 
@@ -58,7 +58,7 @@ function __searchInit(){
                     match.push(v);
             });
 
-            $.each(proj, function(k,v){
+            $.each(snip, function(k,v){
                 var rtag = v.tags;
                 v.isRepo = false;
 
@@ -90,12 +90,12 @@ function __searchInit(){
                             <img 
                                 class="mr-3 rounded-circle"
                                 style="width:50px;height:50px;"
-                                src="/${repo.isRepo ? "repository" : "project"}/${repo.name.toLowerCase()}/assets/logo-sharp.png" 
+                                src="/${repo.isRepo ? "repository" : "snippet"}/${repo.name.toLowerCase()}/assets/logo-sharp.png" 
                                 alt="icon"
                             >
                             <div class="media-body">
                                 <a 
-                                    href="/${repo.isRepo ? "repository" : "project"}/${repo.name.toLowerCase()}"
+                                    href="/${repo.isRepo ? "repository" : "snippet"}/${repo.name.toLowerCase()}"
                                     class="mr-1 stretched-link a-hover unset">${repo.name}</a>`;
 
                 out += 
