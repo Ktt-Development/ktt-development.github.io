@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{% assign data = site.data.repository[page.repo] %}
+<!-- header -->
+<div class="row">
+    <div class="col-12 col-sm-8">
+        <h5>{{ data.name }}</h5>
+        <p class="small text-muted mb-0">{{ data.owner.login }}</p>
+    </div>
+    <div class="col-auto">
+        [latest btn] [github btn]
+    </div>
+</div>
+<hr>
+<!-- nav -->
+<div class="row">
+    <ul class="nav nav-tabs mx-3" id="repository-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab">Overview</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="releases-tab" data-toggle="tab" href="#releases" role="tab">Releases</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" href="{{ data.html_url }}/issues" role="tab">Issues <i class="fas fa-external-link-alt fa-sm"></i></a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" href="{{ data.html_url }}" role="tab">Source <i class="fas fa-external-link-alt fa-sm"></i></a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" href="https://wiki.kttdevelopment.com/{{ data.name }}" role="tab">Wiki <i class="fas fa-external-link-alt fa-sm"></i></a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" href="https://docs.kttdevelopment.com/{{ data.name }}" role="tab">Documentation <i class="fas fa-external-link-alt fa-sm"></i></a>
+        </li>
+    </ul>
+</div>
+<!-- content -->
