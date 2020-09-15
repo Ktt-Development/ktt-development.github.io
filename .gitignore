@@ -1,5 +1,4 @@
 /.idea/
-/_data/repository
 /_site/
 /Pipfile
 *.lock
