@@ -1,0 +1,30 @@
+livereload: true
+timezone: America/New_York
+
+title: Ktt Development
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+exclude:
+  - "CNAME"
+  - "LICENSE"
+  - ".gitignore"
+  - "repository.py"
+  - "repository.txt"
+  - "requirements.txt"
+  - "Pipfile"
+  - "*.lock"
+  - "*.lck"
+
+compress_html:
+  clippings: all
+  comments: [""]
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: []
