@@ -22,6 +22,15 @@ def main():
             file.write(request.text)
             file.close()
             request.close()
+            
+            # write releases.json
+            request = requests.get(f"{repo.url}/releases", allow_redirects=False)
+            request.json()
+
+            file = codecs.open(f"_data/repository/{r}.releases.json", "w", encoding="utf-8")
+            file.write(request.text)
+            file.close()
+            
             # write readme.md
             request = requests.get(f"https://raw.githubusercontent.com/Ktt-Development/{r}/master/README.md")
             file = codecs.open(f"_data/repository/{r}.md", "w", encoding="utf-8")
