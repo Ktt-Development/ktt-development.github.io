@@ -27,6 +27,10 @@ code, pre{
     }
 }
 
+.bg-dark{
+    background-color: $color-dark !important;
+}
+
 body {
     background-color: $color-white;
 }
@@ -34,4 +38,55 @@ body {
 .footer{
     background-color: $color-dark;
     color: white;
+}
+
+/* bootstrap */
+
+.user-select-none{
+    user-select: none;
+}
+
+/* markdown */
+.markdown img {
+    max-width: 100%;
+}
+
+.nav-tabs > li.nav-item > a.nav-link {
+    padding-top     : .25rem;
+    padding-bottom  : .25rem;
+    padding-left    : .5rem;
+    padding-right   : .5rem;
+}
+
+/* components */
+
+.icon{
+    width   : 40px;
+    height  : 40px;
+
+    margin-right: .5rem;
+    
+    border-radius   : .4rem;
+    border          : 1px solid #dee2e6;
+
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+
+    color   : white;
+    background-color: $color-dark;
+
+    text-transform  : uppercase;
+    text-align      : center;
+    user-select     : none;
+
+    * {
+        margin  : 0px;
+    }
+
+    &-sm{
+        width   : 30px;
+        height  : 30px;
+    }
+
 }

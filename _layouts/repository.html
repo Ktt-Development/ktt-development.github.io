@@ -7,16 +7,18 @@ layout: default
 
 <!-- header -->
 <div class="row">
-    <div class="col-12 col-sm-6">
-        <h4>{{ data.name }}</h4>
-        <p class="small text-muted mb-0">{{ data.owner.login }}</p>
+    <div class="col-12 col-sm-6 d-flex align-items-center">
+        <div class="icon">
+            <h3 class="text-uppercase text-center user-select-none m-0">{{ data.name | slice:0 }}</h3>
+        </div>
+        <h4 class="m-0">{{ data.name }}</h4>
     </div>
-    <div class="col">
-        <div class="float-right mt-3">
-            <a href="release?v=latest" class="btn btn-sm btn-primary">
+    <div class="col-12 col-sm-6">
+        <div class="d-flex justify-content-end mt-1">
+            <a href="release?v=latest" class="btn btn-sm btn-primary mr-1 text-truncate">
                 Download Latest File
             </a>
-            <a href="{{ data.html_url }}" class="btn btn-sm btn-primary">
+            <a href="{{ data.html_url }}" class="btn btn-sm btn-primary text-truncate">
                 View on GitHub
             </a>
         </div>
@@ -50,7 +52,7 @@ layout: default
         </ul>
     </div>
     <div class="row border border-rounded border-top-0 p-3 bg-white">
-        <div class="tab-content">
+        <div class="tab-content w-100">
             <div class="tab-pane fade show active" id="overview" role="tabpanel">
                 <div class="row">
                     <div class="col-12 col-md-8 col-lg-9 markdown">
@@ -60,27 +62,43 @@ layout: default
                     <div class="col order-first order-md-last border-left">
                         <div class="mb-3">
                             <h6>About This Repository</h6>
-                            <small class="d-inline-block float-left">ID</small>
-                            <small class="d-inline-block float-right">{{ data.id }}</small>
-                            <br>
-                            <small class="d-inline-block float-left">Created</small>
-                            <small class="d-inline-block float-right">{{ data.created_at | date: "%B %d, %Y" }}</small>
-                            <br>
-                            <small class="d-inline-block float-left">Last Updated</small>
-                            <small class="d-inline-block float-right">{{ data.updated_at | date: "%B %d, %Y" }}</small>
-                            <br>
-                            <small class="d-inline-block float-left">Stars</small>
-                            <small class="d-inline-block float-right">{{ data.stargazers_count }}</small>
-                            <br>
-                            <small class="d-inline-block float-left">License</small>
-                            <small class="d-inline-block float-right"><a href="{{ data.html_url }}/blob/master/LICENSE">{{ data.license.spdx_id }}</a></small>
-                            <br>
-                            <a class="small" href="{{ data.html_url }}"><i class="fab fa-github"></i> View on GitHub</a>
+                            <div class="row mx-0">
+                                <small class="mr-auto">ID</small>
+                                <small class="ml-auto">{{ data.id }}</small>
+                            </div>
+                            <div class="row mx-0">
+                                <small class="mr-auto">Created</small>
+                                <small class="ml-auto">{{ data.created_at | date: "%b %d, %Y" }}</small>
+                            </div>
+                            <div class="row mx-0">
+                                <small class="mr-auto">Last Updated</small>
+                                <small class="ml-auto">{{ data.updated_at | date: "%b %d, %Y" }}</small>
+                            </div>
+                            <div class="row mx-0">
+                                <small class="mr-auto">Stars</small>
+                                <small class="ml-auto">{{ data.stargazers_count }}</small>
+                            </div>
+                            <div class="row mx-0">
+                                <small class="mr-auto">License</small>
+                                <small class="ml-auto"><a href="{{ data.html_url }}/blob/master/LICENSE">{{ data.license.spdx_id }}</a></small>
+                            </div>
+                            <div class="row mx-0">
+                                <a class="small" href="{{ data.html_url }}"><i class="fab fa-github"></i> View on GitHub</a>
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <h6>Latest Version</h6>
-                            {% assign latest = releases[0] %}
-                            <a href="release?v=latest">{{ latest.name }}</a>
+                            <h6>Recent Releases</h6>
+                            {% for i in (0..2) %}
+                                {% if releases[i] %}
+                                    <div class="row mx-0 d-flex align-items-center mb-1">
+                                        <div class="icon icon-sm">
+                                            {% if releases[i].prerelease %}p{% else %}r{% endif %}
+                                        </div>
+                                        <a href="release?v=latest">{{ releases[i].tag_name }}</a>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            
                         </div>
                     </div>
                 </div>
@@ -90,18 +108,19 @@ layout: default
                     <table class="table table-sm">
                         <thead>
                             <tr>
-                                <th scope="col">Type</th>
+                                <th scope="col">Version</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Uploaded</th>
+                                <th scope="col">Release Date</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for release in releases %}
                                 <tr>
-                                    <th scope="row">{{ release.prerelease }}</th>
-                                    <td>
-                                        <a href="release?v={{ release.name }}">{{ release.name }}</a></td>
-                                    <td>{{ release.published_at | date: "%B %d, %Y" }}</td>
+                                    <th scope="row">{{ release.tag_name }}</th>
+                                    <td>{{ release.name }}</td>
+                                    <td>{{ release.published_at | date: "%b %d, %Y" }}</td>
+                                    <td><a href="release?v={{ release.tag_name }}">Download</a></td>
                                 </tr>
                             {% endfor %}
                         </tbody>
