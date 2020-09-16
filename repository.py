@@ -1,4 +1,4 @@
-import sys
+import sys, os
 
 import codecs
 import requests
@@ -14,6 +14,8 @@ def main():
     for r in repos:
         repo = org.get_repo(r)
         if not(repo is None):
+            if not (os.path.exists("_data/repository")):
+                os.makedirs("_data/repository")
             # write repo.json
             request = requests.get(repo.url, allow_redirects=False)
             request.json()
@@ -27,13 +29,16 @@ def main():
             request = requests.get(f"{repo.url}/releases", allow_redirects=False)
             request.json()
 
-            file = codecs.open(f"_data/repository/{r}.releases.json", "w", encoding="utf-8")
+            file = codecs.open(f"_data/repository/{r}-releases.json", "w", encoding="utf-8")
             file.write(request.text)
             file.close()
             
             # write readme.md
+            if not (os.path.exists("_includes/repository")):
+                os.makedirs("_includes/repository")
+
             request = requests.get(f"https://raw.githubusercontent.com/Ktt-Development/{r}/master/README.md")
-            file = codecs.open(f"_data/repository/{r}.md", "w", encoding="utf-8")
+            file = codecs.open(f"_includes/repository/{r}.md", "w", encoding="utf-8")
             file.write(request.text)
             file.close()
             request.close()

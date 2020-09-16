@@ -7,7 +7,7 @@ on:
     # Run once a week on sundays
     - cron:  '0 0 * * SUN'
 jobs:
-  build-and-deploy:
+  update-repository:
     runs-on: ubuntu-latest
     steps:
       - name: 📦 Prepare Git Repo
@@ -18,16 +18,15 @@ jobs:
         with:
           python-version: '3.8'
 
+      - name: 📚 Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
       - name: 📄 Update Repository Data
         run: python repository.py ${{ secrets.GITHUB_TOKEN }}
       - run: |
           git add "_data/repository"
           git commit -m "Update repository"
           git push
-
-      - name: 💾 Deploy
-        uses: JamesIves/github-pages-deploy-action@3.5.9
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: _site
+      # GitHub pages will take it from here

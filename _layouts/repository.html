@@ -2,38 +2,113 @@
 layout: default
 ---
 {% assign data = site.data.repository[page.repo] %}
+{% assign r = page.repo | append: "-releases" %}
+{% assign releases = site.data.repository[r] %}
+
 <!-- header -->
 <div class="row">
-    <div class="col-12 col-sm-8">
-        <h5>{{ data.name }}</h5>
+    <div class="col-12 col-sm-6">
+        <h4>{{ data.name }}</h4>
         <p class="small text-muted mb-0">{{ data.owner.login }}</p>
     </div>
-    <div class="col-auto">
-        [latest btn] [github btn]
+    <div class="col">
+        <div class="float-right mt-3">
+            <a href="release?v=latest" class="btn btn-sm btn-primary">
+                Download Latest File
+            </a>
+            <a href="{{ data.html_url }}" class="btn btn-sm btn-primary">
+                View on GitHub
+            </a>
+        </div>
     </div>
 </div>
 <hr>
 <!-- nav -->
-<div class="row">
-    <ul class="nav nav-tabs mx-3" id="repository-tabs" role="tablist">
-        <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab">Overview</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" id="releases-tab" data-toggle="tab" href="#releases" role="tab">Releases</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" href="{{ data.html_url }}/issues" role="tab">Issues <i class="fas fa-external-link-alt fa-sm"></i></a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" href="{{ data.html_url }}" role="tab">Source <i class="fas fa-external-link-alt fa-sm"></i></a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" href="https://wiki.kttdevelopment.com/{{ data.name }}" role="tab">Wiki <i class="fas fa-external-link-alt fa-sm"></i></a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" href="https://docs.kttdevelopment.com/{{ data.name }}" role="tab">Documentation <i class="fas fa-external-link-alt fa-sm"></i></a>
-        </li>
-    </ul>
+<div class="col-12">
+    <div class="row">
+        <ul class="nav nav-tabs col" id="repository-tabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab">Overview</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="releases-tab" data-toggle="tab" href="#releases" role="tab">Releases</a>
+            </li>
+            {% if data.has_issues %}
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" href="{{ data.html_url }}/issues" role="tab">Issues <i class="fas fa-external-link-alt fa-sm"></i></a>
+                </li>
+            {% endif %}
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" href="{{ data.html_url }}" role="tab">Source <i class="fas fa-external-link-alt fa-sm"></i></a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" href="https://wiki.kttdevelopment.com/{{ data.name }}" role="tab">Wiki</i></a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" href="https://docs.kttdevelopment.com/{{ data.name }}" role="tab">Documentation</a>
+            </li>
+        </ul>
+    </div>
+    <div class="row border border-rounded border-top-0 p-3 bg-white">
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="overview" role="tabpanel">
+                <div class="row">
+                    <div class="col-12 col-md-8 col-lg-9 markdown">
+                        {% capture md %}{% include repository/{{ data.name }}.md %}{% endcapture %}
+                        {{ md | markdownify }}
+                    </div>
+                    <div class="col order-first order-md-last border-left">
+                        <div class="mb-3">
+                            <h6>About This Repository</h6>
+                            <small class="d-inline-block float-left">ID</small>
+                            <small class="d-inline-block float-right">{{ data.id }}</small>
+                            <br>
+                            <small class="d-inline-block float-left">Created</small>
+                            <small class="d-inline-block float-right">{{ data.created_at | date: "%B %d, %Y" }}</small>
+                            <br>
+                            <small class="d-inline-block float-left">Last Updated</small>
+                            <small class="d-inline-block float-right">{{ data.updated_at | date: "%B %d, %Y" }}</small>
+                            <br>
+                            <small class="d-inline-block float-left">Stars</small>
+                            <small class="d-inline-block float-right">{{ data.stargazers_count }}</small>
+                            <br>
+                            <small class="d-inline-block float-left">License</small>
+                            <small class="d-inline-block float-right"><a href="{{ data.html_url }}/blob/master/LICENSE">{{ data.license.spdx_id }}</a></small>
+                            <br>
+                            <a class="small" href="{{ data.html_url }}"><i class="fab fa-github"></i> View on GitHub</a>
+                        </div>
+                        <div class="mb-3">
+                            <h6>Latest Version</h6>
+                            {% assign latest = releases[0] %}
+                            <a href="release?v=latest">{{ latest.name }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="releases" role="tabpanel">
+                <div class="col-12">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">Type</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Uploaded</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for release in releases %}
+                                <tr>
+                                    <th scope="row">{{ release.prerelease }}</th>
+                                    <td>
+                                        <a href="release?v={{ release.name }}">{{ release.name }}</a></td>
+                                    <td>{{ release.published_at | date: "%B %d, %Y" }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- content -->
