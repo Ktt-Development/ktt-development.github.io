@@ -33,7 +33,7 @@ jobs:
           
           git add "_data/repository"
           git add "_includes/repository"
-          git commit -m "Update repository"
+          git diff-index --quiet HEAD || git commit -m "Update repository"
           git push
           
       # GitHub pages will take it from here
