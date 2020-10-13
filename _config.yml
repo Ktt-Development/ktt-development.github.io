@@ -3,16 +3,26 @@ timezone: America/New_York
 
 title: Ktt Development
 
+plugins:
+  - jekyll-readme-index
+  - jekyll-optional-front-matter
+
 defaults:
   - scope:
       path: ""
     values:
       layout: "default"
+  - scope:
+      path: "github"
+    values:
+      layout: "article"
+
 exclude:
   - "CNAME"
   - "LICENSE"
   - ".gitignore"
   - "README.md"
+  - "/_plugins"
 
 compress_html:
   clippings: []

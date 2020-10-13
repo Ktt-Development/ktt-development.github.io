@@ -1,3 +1,12 @@
 ---
-layouts: default
+layout: default
 ---
+{% assign len = page.name | last_index_of: '.' | minus: 1 %}
+<div class="m-5">
+    <h1 class="display-3 text-center">{{ page.name | replace: '-', ' ' | capitalize_all | slice: 0, len }}</h1>
+    <p class="text-center"><i class="far fa-clock"></i> Last updated {{ site.time | date: "%B %d %Y, %r (EST)" }}</p>
+</div>
+
+<div class="border rounded-2x shadow bg-white p-4">
+    {{ content }}
+</div>

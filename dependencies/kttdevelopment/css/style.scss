@@ -41,3 +41,15 @@ body nav {
         background-color: unset;
     }
 }
+
+.rounded-{
+    &1x{
+        border-radius: .75rem;
+    }
+    &2x{
+        border-radius: 1rem;
+    }
+    &3x{
+        border-radius: 1.25rem;
+    }
+}
