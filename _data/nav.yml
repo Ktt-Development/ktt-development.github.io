@@ -1,0 +1,11 @@
+- name: Apps
+  link: /apps
+  links:
+    - name: Rexedia
+      link: /rexedia
+
+- name: Docs
+  link: https://docs.kttdevelopment.com/
+
+- name: Wiki
+  link: https://wiki.kttdevelopment.com/

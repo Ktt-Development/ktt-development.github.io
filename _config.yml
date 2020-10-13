@@ -1,0 +1,25 @@
+livereload: true
+timezone: America/New_York
+
+title: Ktt Development
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+exclude:
+  - "CNAME"
+  - "LICENSE"
+  - ".gitignore"
+  - "README.md"
+
+compress_html:
+  clippings: []
+  comments: all
+  endings: []
+  ignore:
+    envs: []
+  blanklines: false
+  profile: false
+  startings: []

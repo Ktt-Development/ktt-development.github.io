@@ -1,0 +1,42 @@
+---
+panels:
+  - name: Applications
+    icon: fas fa-desktop
+    bg: e04062
+    content: content
+  - name: Libraries
+    icon: fas fa-code
+    bg: eba601
+    content: content
+  - name: Documentation
+    icon: fas fa-file-code
+    bg: 3278be
+    content: content
+  - name: Wiki
+    icon: fas fa-book
+    bg: 6dc7a2
+    content: content
+---
+<div class="bg-white col-12" style="height: 300px;">placeholder</div>
+
+<!-- panels -->
+<div 
+    class="row mx-0"
+    style="margin-top: -3rem;">
+    {% for panel in page.panels %}
+        <div class="col-6 col-lg-3 p-0">
+            <div 
+                class="border bg-white shadow-sm p-4 mx-2 mb-3"
+                style="border-radius: .75rem;">
+                <div 
+                    class="text-white rounded-lg mb-3
+                        d-flex align-items-center justify-content-center" 
+                    style="background-color: #{{ panel.bg }} ;width: 50px; height: 50px;">
+                    <i class="{{ panel.icon }} fa-fw fa-lg"></i>
+                </div>
+                <h4>{{ panel.name }}</h4>
+                <p class="text-muted mb-0">{{ panel.content }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
