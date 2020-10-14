@@ -16,6 +16,10 @@ defaults:
       path: "github"
     values:
       layout: "article"
+  - scope:
+      path: "repo"
+    values:
+      layout: "repository"
 
 exclude:
   - "CNAME"

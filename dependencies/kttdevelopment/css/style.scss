@@ -53,3 +53,12 @@ body nav {
         border-radius: 1.25rem;
     }
 }
+
+.m{
+    $margin-1x: 4rem;
+    &b-{
+       &1x{
+           margin-bottom: $margin-1x;
+       } 
+    }
+}

@@ -10,7 +10,7 @@ module Jekyll
 
     module LastIndexOf
         def last_index_of(words, str)
-            return words.length - words.reverse.index(str)
+            return (words.include? str) ? words.length -  words.reverse.index(str) : -1
         end
     end
     

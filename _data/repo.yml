@@ -1,0 +1,48 @@
+simplehttpserver:
+  name: SimpleHttpServer
+  content: Simplified and enhanced implementation of Java sun http server.
+  links:
+    - name: GitHub
+      icon: fab fa-github
+      bg: 202020
+      link: https://github.com/Ktt-Development/simplehttpserver
+
+    - name: Maven
+      icon: fas fa-code
+      bg: 3278be
+      link: https://mvnrepository.com/artifact/com.kttdevelopment/simplehttpserver
+  ref:
+    - name: Download
+      icon: fas fa-cloud-download-alt
+      bg: eba601
+      link: https://github.com/Ktt-Development/simplehttpserver/releases
+  
+    - name: Documentation
+      icon: fas fa-file-code
+      bg: 6dc7a2
+      link: https://docs.kttdevelopment.com/simplehttpserver
+  
+    - name: Wiki
+      icon: fas fa-book
+      bg: 3278be
+      link: https://wiki.kttdevelopment.com/simplehttpserver
+
+rexedia:
+  name: Rexedia
+  content: Bulk application of metadata and cover art to media files using regular expressions and back references.
+  links:
+    - name: GitHub
+      icon: fab fa-github
+      bg: 202020
+      link: https://github.com/Ktt-Development/rexedia
+
+  ref:
+    - name: Download
+      icon: fas fa-cloud-download-alt
+      bg: eba601
+      link: https://github.com/Ktt-Development/rexedia/releases
+  
+    - name: Wiki
+      icon: fas fa-book
+      bg: 3278be
+      link: https://wiki.kttdevelopment.com/rexedia

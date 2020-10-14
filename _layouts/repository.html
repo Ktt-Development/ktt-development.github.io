@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<div class="my-5 border-bottom">
+    {% assign len = page.name | last_index_of: '.' | minus: 1 %}
+    {% assign repo = page.name | slice: 0, len %}
+    {% assign repo = site.data.repo[repo] %}
+
+    <h1 class="text-center mt-4">{{ repo.name }}</h1>
+    <p class="text-center text-muted mb-4">{{ repo.content }}</p>
+    <div class="row mb-2 d-flex justify-content-center">
+        {% for link in repo.links %}
+            {% include repo-link.liquid 
+                name=link.name
+                bg=link.bg
+                icon=link.icon
+                link=link.link         
+            %}
+        {% endfor %}
+    </div>
+    <div class="row mb-3 d-flex justify-content-center">
+        {% for link in repo.ref %}
+            {% include repo-link.liquid 
+                name=link.name
+                bg=link.bg
+                icon=link.icon
+                link=link.link         
+            %}
+        {% endfor %}
+    </div>
+</div>
+
+{{ content }}

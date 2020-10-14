@@ -17,7 +17,12 @@
                 border-radius: 0px 0px .25rem .25rem; 
                 border-left: 0px; border-right: 0px; border-bottom: 0px;">
             {% for entry in include.links %}
-                <a class="dropdown-item" href="{{ include.link }}{{ entry.link }}">{{ entry.name }}</a>
+                {% if include.link contains '#' %}
+                    {% assign len = include.link | last_index_of: '#' | minus: 1 %}
+                {% else %}
+                    {% assign len = include.link | size %}
+                {% endif %}
+                <a class="dropdown-item" href="{{ include.link | slice: 0, len }}{{ entry.link }}">{{ entry.name }}</a>
             {% endfor %}
         </div>
     {% endif %}

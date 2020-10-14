@@ -5,14 +5,14 @@ div.highlighter-rouge{
     margin-bottom: .5rem;
 }
 
-div.highlight{
+figure.highlight, div.highlight{
     background-color: #212121 !important;
     border-radius: 6px;
     margin: 0px;
     overflow: hidden;
 }
 
-pre.highlight {
+figure.highlight pre, pre.highlight {
     padding: 10px;
     margin-left: 5px;
     margin-right: 5px;

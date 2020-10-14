@@ -1,8 +1,14 @@
-- name: Apps
-  link: /apps
+- name: Applications
+  link: /repo
   links:
     - name: Rexedia
       link: /rexedia
+
+- name: Libraries
+  link: /repo
+  links:
+    - name: SimpleHttpServer
+      link: /simplehttpserver
 
 - name: Docs
   link: https://docs.kttdevelopment.com/
