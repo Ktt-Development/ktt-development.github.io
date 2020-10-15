@@ -2,57 +2,55 @@
 ---
 <!-- wide -->
 <div class="row mb-1x">
-    <div class="col-12 col-lg-6 order-first">
+    <div class="col-12 col-lg-6 mb-2 order-first">
         <h4><i class="fas fa-file-video"></i> Wide Media Support</h4>
         <p class="mb-0">Rexedia supports all file extensions supported by <a href="https://ffmpeg.org/">FFMPEG</a>.</p>
 
     </div>
     <div class="col-12 col-lg-6">
 {% highlight shell %}
-rexedia -i "file.mp4"
+rexedia -i "file.mp4" -c "(.+)" "$1.png" -o "(.+)" "$1.avi"
 {% endhighlight %}
     </div>
 </div>
-<!-- tasks -->
+<!-- features -->
 <div class="row mb-1x">
-    <div class="col-12 col-lg-6 order-first order-lg-last">
-        <h4><i class="far fa-star fa-fw"></i> Extended Features</h4>
-        <p class="mb-0">Out of the box support for:</p>
+    <div class="col-12 col-lg-6 mb-2 order-first order-lg-last">
+        <h4><i class="far fa-star fa-fw"></i> Features</h4>
+        <p class="mb-0">Complicated tasks simplified:</p>
         <ul>
-            <li>Http Cookies</li>
-            <li>Http Sessions</li>
-            <li>Multithreaded Servers</li>
+            <li>Apply cover art and metadata.</li>
+            <li>Customize output with regular expressions and back references.</li>
+            <li>Support for preset files instead of command-line flags.</li>
+            <li>Logging to track changes.</li>
         </ul>
     </div>
     <div class="col-12 col-lg-6">
-{% highlight java %}
-SimpleHttpServer server = new SimpleHttpServer(8080);
-server.setHttpSessionHandler(new HttpSessionHandler());
-
-HttpHandler handler = new HttpHandler(){
-
-    @Override
-    public void handle(HttpExchange exchange){
-        HttpSession session = server.getHttpSession(exchange);
-        String session_id = session.getSessionID();
-
-        exchange.close();
-    }
-
-};
+{% highlight shell %}
+rexedia -i video.mp4 -p preset.yml
+{% endhighlight %}
+<br>
+{% highlight yml %}
+// preset.yml
+metadata:  
+  - meta: "title"  
+    regex: "(.+)"
+    format: "$1"
 {% endhighlight %}
     </div>
 </div>
 <!-- safe -->
 <div class="row mb-1x">
-    <div class="col-12 col-lg-6 order-first">
-        <h4><i class="fas fa-file-video"></i> Wide Media Support</h4>
-        <p class="mb-0">Rexedia supports all file extensions supported by <a href="https://ffmpeg.org/">FFMPEG</a>.</p>
-
+    <div class="col-12 col-lg-6 mb-2 order-first">
+        <h4><i class="far fa-check-circle"></i> Safe Video Formatting</h4>
+        <p class="mb-0">Rexedia preserves the integrity of the video file.</p>
+        <li>Media file integrity is verified at every stage.</li>
+        <li>Backup files will always be saved on format failure.</li>
+        <li>Use the <kbd>-b</kbd> flag to keep backup files even on successful formats.</li>
     </div>
     <div class="col-12 col-lg-6">
 {% highlight shell %}
-rexedia -i "file.mp4"
+rexedia -i "file.mp4" -c "(.+)" "$1.png" -b
 {% endhighlight %}
     </div>
 </div>

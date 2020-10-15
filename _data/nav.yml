@@ -10,8 +10,10 @@
     - name: SimpleHttpServer
       link: /simplehttpserver
 
-- name: Docs
-  link: https://docs.kttdevelopment.com/
-
-- name: Wiki
-  link: https://wiki.kttdevelopment.com/
+- name: GitHub
+  link: /github
+  links:
+    - name: Contributing
+      link: /contributing
+    - name: Code of Conduct
+      link: /code-of-conduct

@@ -2,13 +2,14 @@
 ---
 <!-- complicated tasks -->
 <div class="row mb-1x">
-    <div class="col-12 col-lg-6 order-first">
+    <div class="col-12 col-lg-6 mb-2 order-first">
         <h4><i class="fas fa-clipboard-list fa-fw"></i> Complicated tasks made easy</h4>
         <p class="mb-0">Simplified exchange methods for:</p>
         <ul>
-            <li>Parsing HTTP POST with multipart/form-data support.</li>
+            <li>Parsing HTTP <code>GET</code> / <code>POST</code> with multipart/form-data support.</li>
+            <li>Output stream writing with <code>#send</code>.</li>
             <li>Sending gzip compressed responses.</li>
-            <li>Simplified output stream writing with <code>#send</code>.</li>
+            <li>Sending files.</li>
         </ul>
     </div>
     <div class="col-12 col-lg-6">
@@ -19,7 +20,7 @@ SimpleHttpHandler handler = new SimpleHttpHandler(){
     public void handle(SimpleHttpExchange exchange){
         Map POST = exchange.getPostMap();
 
-        exchange.send("OK", HttpCode.HTTP_OK, true);
+        exchange.send(new File("OK.png"), HttpCode.HTTP_OK, true);
     }
 
 };
@@ -28,7 +29,7 @@ SimpleHttpHandler handler = new SimpleHttpHandler(){
 </div>
 <!-- extended features -->
 <div class="row mb-1x">
-    <div class="col-12 col-lg-6 order-first order-lg-last">
+    <div class="col-12 col-lg-6 mb-2 order-first order-lg-last">
         <h4><i class="far fa-star fa-fw"></i> Extended Features</h4>
         <p class="mb-0">Out of the box support for:</p>
         <ul>
@@ -49,6 +50,8 @@ HttpHandler handler = new HttpHandler(){
         HttpSession session = server.getHttpSession(exchange);
         String session_id = session.getSessionID();
 
+        Map<String,String> cookies = exchange.getCookies(); 
+
         exchange.close();
     }
 
@@ -58,7 +61,7 @@ HttpHandler handler = new HttpHandler(){
 </div>
 <!-- simple handlers -->
 <div class="row mb-1x">
-    <div class="col-12 col-lg-6 order-first">
+    <div class="col-12 col-lg-6 mb-2 order-first">
         <h4><i class="fas fa-server fa-fw"></i> Simplified Handlers</h4>
         <p class="mb-0">Easy to use handlers:</p>
         <ul>
