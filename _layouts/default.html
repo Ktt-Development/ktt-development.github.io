@@ -21,7 +21,7 @@ layout: compress
         <link rel="stylesheet" href="/dependencies/kttdevelopment/css/highlight.css">
     </head>
 
-    <body>
+    <body class="d-flex flex-column h-100">
         <!-- nav -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
@@ -45,8 +45,17 @@ layout: compress
             </div>
         </nav>
         <!-- content -->
-        <div class="container">
+        <div class="container mb-5">
             {% include anchor_headings.html html=content anchorBody='#' %}
+        </div>
+
+        <!-- footer -->
+        <div class="footer mt-auto">
+            <div id="copyright" class="text-center">
+                <small class="no-translate m-0">
+                    &copy; Ktt&nbsp;Development 2020. All rights reserved
+                </small>
+            </div>
         </div>
 
         <!-- bootstrap -->
@@ -58,5 +67,7 @@ layout: compress
                 $('[data-toggle="tooltip"]').tooltip();
             })
         </script>
+        <!-- local -->
+        <script src="/dependencies/kttdevelopment/js/anchor-scroll.js"></script>
     </body>
 </html>

@@ -29,6 +29,17 @@ html, body{
     background-color: $color-white;
 }
 
+a:not(.nav-link):not(.navbar-brand){
+    &, &:hover{
+        transition: all 0.25s ease-in-out !important;
+        text-decoration: none !important;
+    }
+    
+    &:hover{
+        color: #0056b3 !important;
+    }
+}
+
 // navigation
 body nav {
     background-color: $color-dark;
@@ -42,15 +53,20 @@ body nav {
     }
 }
 
+.footer{
+    background-color: $color-dark;
+    color: white;
+}
+
 .rounded-{
     &1x{
-        border-radius: .75rem;
+        border-radius: .5rem;
     }
     &2x{
-        border-radius: 1rem;
+        border-radius: .75rem;
     }
     &3x{
-        border-radius: 1.25rem;
+        border-radius: 1rem;
     }
 }
 
