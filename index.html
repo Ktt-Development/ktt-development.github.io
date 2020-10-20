@@ -1,14 +1,14 @@
 ---
 panels:
-  - name: GitHub
-    icon: fab fa-github
-    bg: 202020
-    link: 'https://github.com/Ktt-Development'
+  - name: Applications
+    icon: fas fa-desktop
+    bg: e04062
+    link: '/repo#applications'
 
   - name: Libraries
     icon: fas fa-code
     bg: eba601
-    link: '#libraries'
+    link: '/repo#libraries'
 
   - name: Documentation
     icon: fas fa-file-code
@@ -33,8 +33,8 @@ panels:
                 <div 
                     class="text-white rounded-lg
                         d-flex align-items-center justify-content-center" 
-                    style="background-color: #{{ panel.bg }} ;width: 40px; height: 40px;">
-                    <i class="{{ panel.icon }} fa-fw fa-lg"></i>
+                    style="background-color: #{{ panel.bg }} ;width: 30px; height: 30px;">
+                    <i class="{{ panel.icon }} fa-fw"></i>
                 </div>
                 <a class="stretched-link" href="{{ panel.link }}">
                     <h5 class="ml-2 my-0">{{ panel.name }}</h5>
