@@ -1,18 +1,15 @@
 ---
 ---
 <!-- complicated tasks -->
-<div class="row mb-1x">
-    <div class="col-12 col-lg-6 mb-2 order-first">
-        <h4><i class="fas fa-clipboard-list fa-fw"></i> Complicated tasks made easy</h4>
-        <p class="mb-0">Simplified exchange methods for:</p>
-        <ul>
-            <li>Parsing HTTP <code>GET</code> / <code>POST</code> with multipart/form-data support.</li>
-            <li>Output stream writing with <code>#send</code>.</li>
-            <li>Sending gzip compressed responses.</li>
-            <li>Sending files.</li>
-        </ul>
-    </div>
-    <div class="col-12 col-lg-6">
+<h4><i class="fas fa-clipboard-list fa-fw"></i> Complicated tasks made easy</h4>
+<p class="mb-0">Simplified exchange methods for:</p>
+<ul>
+    <li>Parsing HTTP <code>GET</code> / <code>POST</code> with multipart/form-data support.</li>
+    <li>Output stream writing with <code>#send</code>.</li>
+    <li>Sending gzip compressed responses.</li>
+    <li>Sending files.</li>
+</ul>
+<!-- separator -->
 {% highlight java %}
 SimpleHttpHandler handler = new SimpleHttpHandler(){
 
@@ -29,20 +26,18 @@ SimpleHttpHandler handler = new SimpleHttpHandler(){
 
 };
 {% endhighlight %}
-    </div>
-</div>
+
+<!-- separator -->
+
 <!-- extended features -->
-<div class="row mb-1x">
-    <div class="col-12 col-lg-6 mb-2 order-first order-lg-last">
-        <h4><i class="far fa-star fa-fw"></i> Extended Features</h4>
-        <p class="mb-0">Out of the box support for:</p>
-        <ul>
-            <li>Http Cookies</li>
-            <li>Http Sessions</li>
-            <li>Multithreaded Servers</li>
-        </ul>
-    </div>
-    <div class="col-12 col-lg-6">
+<h4><i class="far fa-star fa-fw"></i> Extended Features</h4>
+<p class="mb-0">Out of the box support for:</p>
+<ul>
+    <li>Http Cookies</li>
+    <li>Http Sessions</li>
+    <li>Multithreaded Servers</li>
+</ul>
+<!-- separator -->
 {% highlight java %}
 SimpleHttpServer server = new SimpleHttpServer(8080);
 server.setHttpSessionHandler(new HttpSessionHandler());
@@ -61,23 +56,21 @@ HttpHandler handler = new HttpHandler(){
 
 };
 {% endhighlight %}
-    </div>
-</div>
+
+<!-- separator -->
+
 <!-- simple handlers -->
-<div class="row mb-1x">
-    <div class="col-12 col-lg-6 mb-2 order-first">
-        <h4><i class="fas fa-server fa-fw"></i> Simplified Handlers</h4>
-        <p class="mb-0">Easy to use handlers:</p>
-        <ul>
-            <li>Redirect Handler</li>
-            <li>Predicate Handler</li>
-            <li>File Handler</li>
-            <li>Server-Sent-Events Handler</li>
-            <li>Temporary Handler</li>
-            <li>Throttled Handler</li>
-        </ul>
-    </div>
-    <div class="col-12 col-lg-6">
+<h4><i class="fas fa-server fa-fw"></i> Simplified Handlers</h4>
+<p class="mb-0">Easy to use handlers:</p>
+<ul>
+    <li>Redirect Handler</li>
+    <li>Predicate Handler</li>
+    <li>File Handler</li>
+    <li>Server-Sent-Events Handler</li>
+    <li>Temporary Handler</li>
+    <li>Throttled Handler</li>
+</ul>
+<!-- separator -->
 {% highlight java %}
 RedirectHandler redirect = new RedirectHandler("https://github.com/");
 
@@ -90,5 +83,3 @@ SSE.push("Server sent events!");
 
 ThrottledHandler throttled = new ThrottledHandler(new HttpHandler(), new ServerExchangeThrottler())
 {% endhighlight %}
-    </div>
-</div>

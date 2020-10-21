@@ -1,0 +1,15 @@
+<div class="my-5">
+    <h1 id="{{ include.id }}" class="text-center">{{ include.name }}</h1>
+</div>
+
+{% for r in site.data.repo %}
+    {% assign link = r[0] | prepend: '/repo/' %}
+    {% assign repo = r[1] %}
+    {% if repo.type == include.type %}
+        {% include_relative repo-card.liquid 
+            name = repo.name
+            content = repo.content
+            link = link
+        %}
+    {% endif %}
+{% endfor %}

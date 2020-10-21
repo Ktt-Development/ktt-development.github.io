@@ -35,7 +35,7 @@ layout: compress
                 <div class="collapse navbar-collapse" id="navbar-collapse">
                     <ul class="navbar-nav ml-auto">
                         {% for tab in site.data.nav %}
-                            {% include nav-link.liquid
+                            {% include layouts/default/nav-link.liquid
                                 name = tab.name
                                 link = tab.link
                                 links = tab.links %} 

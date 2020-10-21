@@ -1,19 +1,19 @@
 - name: Applications
-  link: /repo
+  link: /repo#applications
   links:
     - name: Rexedia
-      link: /rexedia
+      link: /repo/rexedia
 
 - name: Libraries
-  link: /repo
+  link: /repo#libraries
   links:
     - name: SimpleHttpServer
-      link: /simplehttpserver
+      link: /repo/simplehttpserver
 
 - name: GitHub
-  link: /github
+  link: https://github.com/Ktt-Development
   links:
     - name: Contributing
-      link: /contributing
+      link: /github/contributing
     - name: Code of Conduct
-      link: /code-of-conduct
+      link: /github/code-of-conduct

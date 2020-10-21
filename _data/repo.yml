@@ -1,6 +1,7 @@
 simplehttpserver:
   name: SimpleHttpServer
   content: Simplified and enhanced implementation of Java sun http server.
+  type: lib
   links:
     - name: GitHub
       icon: fab fa-github
@@ -30,6 +31,7 @@ simplehttpserver:
 rexedia:
   name: Rexedia
   content: Bulk application of metadata and cover art to media files using regular expressions and back references.
+  type: app
   links:
     - name: GitHub
       icon: fab fa-github
