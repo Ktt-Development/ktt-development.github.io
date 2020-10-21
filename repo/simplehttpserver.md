@@ -1,22 +1,22 @@
 ---
 ---
-<!-- complicated tasks -->
-<h4><i class="fas fa-clipboard-list fa-fw"></i> Complicated tasks made easy</h4>
-<p class="mb-0">Simplified exchange methods for:</p>
-<ul>
-    <li>Parsing HTTP <code>GET</code> / <code>POST</code> with multipart/form-data support.</li>
-    <li>Output stream writing with <code>#send</code>.</li>
-    <li>Sending gzip compressed responses.</li>
-    <li>Sending files.</li>
-</ul>
+## 📋 Complicated tasks made easy
+
+Simplified exchange methods for:
+- Parsing HTTP `GET`/`POST` with `multipart/form-data` support.
+- Output stream writing with `#send`.
+- Sending gzip compressed responses.
+- Sending files
+
 <!-- separator -->
-{% highlight java %}
+
+```java
 SimpleHttpHandler handler = new SimpleHttpHandler(){
 
     @Override
     public void handle(SimpleHttpExchange exchange){
         Map POST = exchange.getPostMap();
-
+        
         MultipartFormData form = exchange.getMultipartFormData();
         Record record = form.getRecord("record");
         FileRecord file = (FileRecord) form.getRecord("file");
@@ -25,20 +25,20 @@ SimpleHttpHandler handler = new SimpleHttpHandler(){
     }
 
 };
-{% endhighlight %}
+```
 
 <!-- separator -->
 
-<!-- extended features -->
-<h4><i class="far fa-star fa-fw"></i> Extended Features</h4>
-<p class="mb-0">Out of the box support for:</p>
-<ul>
-    <li>Http Cookies</li>
-    <li>Http Sessions</li>
-    <li>Multithreaded Servers</li>
-</ul>
+## ⭐ Extended Features
+
+Out of the box support for:
+- HTTP Cookies
+- HTTP Sessions
+- Multithreaded Servers
+
 <!-- separator -->
-{% highlight java %}
+
+```java
 SimpleHttpServer server = new SimpleHttpServer(8080);
 server.setHttpSessionHandler(new HttpSessionHandler());
 
@@ -55,23 +55,22 @@ HttpHandler handler = new HttpHandler(){
     }
 
 };
-{% endhighlight %}
+```
 
 <!-- separator -->
 
-<!-- simple handlers -->
-<h4><i class="fas fa-server fa-fw"></i> Simplified Handlers</h4>
-<p class="mb-0">Easy to use handlers:</p>
-<ul>
-    <li>Redirect Handler</li>
-    <li>Predicate Handler</li>
-    <li>File Handler</li>
-    <li>Server-Sent-Events Handler</li>
-    <li>Temporary Handler</li>
-    <li>Throttled Handler</li>
-</ul>
+## 💻 Simplified Handlers
+
+Easy to use handlers:
+- Redirect Handler
+- Predicate Handler
+- File Handler
+- Server-Sent-Events Handler
+- Temporary Handler
+- Throttled Handler
 <!-- separator -->
-{% highlight java %}
+
+```java
 RedirectHandler redirect = new RedirectHandler("https://github.com/");
 
 FileHandler fileHandler = new FileHandler();
@@ -82,4 +81,4 @@ SSEHandler SSE = new SSEHandler();
 SSE.push("Server sent events!");
 
 ThrottledHandler throttled = new ThrottledHandler(new HttpHandler(), new ServerExchangeThrottler())
-{% endhighlight %}
+```

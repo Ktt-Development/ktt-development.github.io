@@ -13,8 +13,10 @@ separator: "<!-- separator -->"
     {% include layouts/repository/repo-links.liquid links = repo.ref %}
 </div>
 
-{% if content contains layout.separator %}
-    {% assign sections = content | split: layout.separator %}
+{% assign cont = content | markdownify %}
+
+{% if cont contains layout.separator %}
+    {% assign sections = cont | split: layout.separator %}
     {% for section in sections %}
         {% assign odd = forloop.index | modulo: 2 %}
         {% assign third = forloop.index | modulo: 3 %}
