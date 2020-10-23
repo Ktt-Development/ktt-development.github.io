@@ -4,10 +4,11 @@ separator: "<!-- separator -->"
 ---
 <div class="my-5 pb-2 border-bottom">
     {% assign len = page.name | last_index_of: '.' | minus: 1 %}
+    [{{ page.name }}]
     {% assign repo = page.name | slice: 0, len %}
-    {{ repo }}
+    [{{ repo }}]
     {% assign repo = site.data.repo[repo] %}
-    {{ repo }}
+    [{{ repo }}]
     <h1 class="text-center mt-4">{{ repo.name }}</h1>
     <p class="text-center text-muted mb-4">{{ repo.content }}</p>
     {% include layouts/repository/repo-links.liquid links = repo.links %}
