@@ -1,11 +1,11 @@
 - name: Applications
-  link: /repo#applications
+  link: /#applications
   links:
     - name: Rexedia
       link: /repo/rexedia
 
 - name: Libraries
-  link: /repo#libraries
+  link: /#libraries
   links:
     - name: SimpleHttpServer
       link: /repo/simplehttpserver

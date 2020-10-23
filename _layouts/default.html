@@ -8,7 +8,6 @@ layout: compress
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- bootstrap -->
         <link rel="stylesheet" href="/dependencies/bootstrap/css/bootstrap.min.css">
 
         <!-- fontawesome -->
@@ -23,7 +22,7 @@ layout: compress
 
     <body class="d-flex flex-column h-100">
         <!-- nav -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="/">
                     <img class="mr-1" src="/dependencies/kttdevelopment/assets/logo.png" width="35" height="35">
@@ -45,7 +44,7 @@ layout: compress
             </div>
         </nav>
         <!-- content -->
-        <div class="container my-3">
+        <div class="container mb-5" style="margin-top: 80px;">
             {% include anchor_headings.html html=content anchorBody='#' %}
         </div>
 

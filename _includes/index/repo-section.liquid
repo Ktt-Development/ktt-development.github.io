@@ -1,4 +1,4 @@
-<div class="my-5">
+<div class="my-4">
     <h1 id="{{ include.id }}" class="text-center">{{ include.name }}</h1>
 </div>
 
@@ -6,7 +6,7 @@
     {% assign link = r[0] | prepend: '/repo/' %}
     {% assign repo = r[1] %}
     {% if repo.type == include.type %}
-        {% include_relative repo-card.liquid 
+        {% include index/repo-card.liquid 
             name = repo.name
             content = repo.content
             link = link
