@@ -3,6 +3,8 @@
   links:
     - name: Rexedia
       link: /repo/rexedia
+    - name: WebDir
+      link: /repo/webdir
 
 - name: Libraries
   link: /#libraries

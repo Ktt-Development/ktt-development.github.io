@@ -12,6 +12,7 @@ simplehttpserver:
       icon: fas fa-code
       bg: 3278be
       link: https://mvnrepository.com/artifact/com.kttdevelopment/simplehttpserver
+
   ref:
     - name: Download
       icon: fas fa-cloud-download-alt
@@ -53,3 +54,29 @@ rexedia:
       icon: fas fa-book
       bg: 3278be
       link: https://wiki.kttdevelopment.com/rexedia
+
+webdir:
+  name: WebDir
+  content: Extensible site generator and file explorer.
+  type: app
+  links:
+    - name: GitHub
+      icon: fab fa-github
+      bg: 202020
+      link: https://github.com/Ktt-Development/webdir
+
+    - name: Maven
+      icon: fas fa-code
+      bg: 3278be
+      link: https://mvnrepository.com/artifact/com.kttdevelopment.webdir/webdir-api
+
+  ref:
+    - name: Download
+      icon: fas fa-cloud-download-alt
+      bg: eba601
+      link: https://github.com/Ktt-Development/webdir/releases
+
+    - name: Wiki
+      icon: fas fa-book
+      bg: 3278be
+      link: https://wiki.kttdevelopment.com/webdir
