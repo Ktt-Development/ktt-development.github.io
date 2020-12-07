@@ -26,7 +26,7 @@ Complicated tasks simplified:
 rexedia -i video.mp4 -p preset.yml
 ```
 ```yml
-// preset.yml
+# preset.yml
 metadata:  
   - meta: 'title' 
     regex: '(.+)'
